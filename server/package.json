@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "postinstall": "mpx prisma generate",
+    "postinstall": "npx prisma generate",
     "start": " prisma generate && node server.js",
     "server": "nodemon server.js"
   },
