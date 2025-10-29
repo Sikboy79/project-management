@@ -6,8 +6,8 @@ export const inngest = new Inngest({ id: "project-management" });
 
 //Inngest Function to save user data to database
 const syncUserCreation = inngest.createFunction(
-  { id: "sync-user-from-clerk" },
-  { event: "clerk/user.created" },
+  { id: 'sync-user-from-clerk' },
+  { event: 'clerk/user.created'},
   async ({ event }) => {
     const { data } = event;
     await prisma.user.create({
@@ -23,8 +23,8 @@ const syncUserCreation = inngest.createFunction(
 
 //Inngest Function to delete user data to database
 const syncUserDeletion = inngest.createFunction(
-  { id: "delete-user-with-clerk" },
-  { event: "clerk/user.deleted" },
+  { id: 'delete-user-with-clerk' },
+  { event: 'clerk/user.deleted' },
   async ({ event }) => {
     const { data } = event;
     await prisma.user.delete({
@@ -37,8 +37,8 @@ const syncUserDeletion = inngest.createFunction(
 
 //Inngest Function to update user data to database
 const syncUserUpdation = inngest.createFunction(
-  { id: "update-user-from-clerk" },
-  { event: "clerk/user.updated" },
+  { id: 'update-user-from-clerk' },
+  { event: 'clerk/user.updated' },
   async ({ event }) => {
     const { data } = event;
     await prisma.user.update({
@@ -84,8 +84,8 @@ const syncWorkspaceCreation = inngest.createFunction(
 // Inngest Function to update workspace data in database
 
 const syncWorkspaceUpdation = inngest.createFunction(
-  { id: "update-workspace-from-clerk" },
-  { event: "clerk/organization.updated" },
+  { id: 'update-workspace-from-clerk' },
+  { event: 'clerk/organization.updated' },
   async ({ event }) => {
     const { data } = event;
     await prisma.workspace.update({
@@ -104,8 +104,8 @@ const syncWorkspaceUpdation = inngest.createFunction(
 // Inngest Function to delete workspace from database
 
 const syncWorkspaceDeletion = inngest.createFunction(
-  { id: "delete-workspace-with-clerk" },
-  { event: "clerk/organization.deleted" },
+  { id: 'delete-workspace-with-clerk' },
+  { event: 'clerk/organization.deleted' },
   async ({ event }) => {
     const { data } = event;
     await prisma.workspace.delete({
