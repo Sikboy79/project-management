@@ -1,5 +1,5 @@
 
-import prisma from "../configs/prisma";
+import prisma from "../configs/prisma.js";
 
 //Get all workspaces for user
 
