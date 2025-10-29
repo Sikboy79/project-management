@@ -139,7 +139,7 @@ const workspaceSlice = createSlice({
             state.loading = false;
         });
         builder.addCase(fetchWorkspaces.rejected, (state)=>{
-            state.loading = false
+            state.loading = false;
         });
     }
 });
