@@ -11,7 +11,7 @@ import { fetchWorkspaces } from '../features/workspaceSlice'
 
 const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-    const { loading, workspces } = useSelector((state) => state.workspace)
+    const { loading, workspaces } = useSelector((state) => state.workspace)
     const dispatch = useDispatch()
     const {user, isLoaded} = useUser()
     const {getToken} = useAuth()
@@ -23,7 +23,7 @@ const Layout = () => {
 
     // Initial load of workspaces
     useEffect(() => {
-        if(isloaded && ueer && setWorkspaces.length === 0){
+        if(isLoaded && user && workspaces.length === 0){
             dispatch(fetchWorkspaces({getToken}))
         }
     }, [user, isLoaded])
@@ -42,7 +42,7 @@ const Layout = () => {
         </div>
     )
 
-    if(user && workspces.length === 0){
+    if(user && workspaces.length === 0){
         return (
             <div className='min-h-screen flex justify-center items-center'>
                 <CreateOrganization />
